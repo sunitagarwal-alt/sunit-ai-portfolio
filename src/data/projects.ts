@@ -1,0 +1,3 @@
+export type Project={id:string;title:string;thumbnail:string;liveUrl:string;featured?:boolean;order?:number;published?:boolean};
+export const projects:Project[]=[{id:'setu-for-nri',title:'Setu for NRI',thumbnail:'/projects/setu-for-nri.svg',liveUrl:'https://setu-web-beta.vercel.app/',featured:true,order:1,published:true},{id:'palm-reading',title:'Palm reading',thumbnail:'/projects/palm-reading.svg',liveUrl:'https://palmreading-orpin.vercel.app/',order:2,published:true}];
+export const visibleProjects=projects.filter(p=>p.published!==false&&/^https:\/\//.test(p.liveUrl)).sort((a,b)=>(a.order??999)-(b.order??999));
